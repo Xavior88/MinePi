@@ -1,0 +1,444 @@
+html{
+    box-sizing: border-box;
+    font-size: 62.5%; /**Reset para REMS - 62.5% = 10px de 16px // por defecto, font-size es 16**/
+}
+
+*,*:before, *:after{
+    box-sizing: inherit;
+}
+
+body{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.6rem;
+}
+
+/** GLOBALES **/
+.contenedor{
+    max-width: 100rem;
+    margin: 0 auto;
+}
+
+img{
+    max-width: 100%;
+}
+
+h1{
+    font-size: 3rem;
+}
+
+h2{
+    font-size: 2.6rem;
+}
+
+h3{
+    font-size: 2.2rem;
+}
+
+/** UTILIDADES **/
+
+.seccion {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+
+.d-block{
+    display: block!important;
+}
+
+.contenido-centrado{
+    max-width: 60rem;
+}
+
+.centrar-texto {
+    text-align: center;
+}
+
+/** HEADER**/
+
+.site-header{
+    background-color: #333333;
+    padding: 1rem 0 3rem;
+}
+
+.contenido-header{
+    height: 100%;
+    display: flex;
+    flex-direction: column; /*Al cambiar la direccion de flex, tambien cambian los atributos justify content (ahora vertical) y align item (ahora horizontal)*/
+    justify-content: space-between;
+}
+
+.contenido-header h1{
+    color:white;
+    padding-bottom: 2rem;
+    max-width: 50rem;
+    line-height: 2; /* Tamaño del interlineado*/
+}
+
+.site-header.inicio{ /* Aplica cuando tenemos las dos a la vez*/
+    background-image: url(../img/header.jpg);
+    background-position: center center;
+    background-size: cover;
+    height: 75vh;
+    min-height: 40rem;
+    min-width: 80rem;
+}
+
+.barra-superior{
+    display: flex;
+    justify-content: space-between; /* Alinea horizontalmente */
+    align-items: center; /*Alinea verticalmente */
+    padding-top: 2rem;
+}
+
+.mas-info{
+    font-weight: 300;
+    text-align: center;
+}
+
+.prestaciones{
+    display: flex;
+    justify-content: space-between;
+}
+
+.iconos{
+    flex-basis: calc(33.3% - 1rem); /* Usando flexbox, sustituye a width*/
+    text-align: center;
+}
+
+.iconos h3{
+    text-transform: uppercase;
+}
+
+/** ANUNCIOS **/
+
+.contenedor-anuncios{
+    display: flex;
+    justify-content: space-between;
+    line-height: 3rem;
+    flex-wrap: wrap; /* Va a afectar a que solo haya X anuncios por columna, debe estar en el padre para pasarsela al hijo. El hijo es .anuncio*/
+}
+
+.anuncio{
+    flex: 0 0 calc(33.3% - 1rem); /* Hace exactamente lo mismo que las tres líneas de abajo por este orden: grow shrink y basis*/
+/*    flex-grow: 0; /* Con un 1 el contenido crecerá hasta ocupar lo máximo disponible. Con 0 se mantendrá como estuviera*/
+/*    flex-shrink: 0; /* Permite definir con un 1 que el contenido cambie su tamaño. Con un 0 respeta el tamaño de la base y en este caso se quedará en 33.3% */
+/*    flex-basis: calc(33.3% - 1rem);*/
+    border: 1px solid #b5b5b5;
+    background-color: #f5f5f5;
+    margin-bottom: 2rem;
+}
+
+.contenido-anuncio{
+    padding: 2rem;
+}
+
+.contenido-anuncio h3, .contenido-anuncio p {
+    margin: 0;
+}
+
+.precio {
+    color: #71B100;
+    font-weight: 900;
+}
+
+.caracteristicas{
+    list-style: none;
+    padding:  0;
+    display: flex;
+    justify-content: space-evenly;
+    max-width: 50rem;
+    flex: 1;
+}
+
+.caracteristicas li {
+    /*flex: 1;*/
+    display: flex;
+}
+
+.caracteristicas li img {
+    padding-right: 2rem;
+}
+
+/** BOTONES **/
+
+.boton{
+    display: inline-block;
+    color: white;
+    font-weight: 700;
+    font-size: 1.8rem;
+    text-decoration: none;
+    padding: 1rem 3rem;
+    margin-top: 3rem;
+    text-align: center;
+    border: none;
+}
+
+.boton:hover{
+    cursor: pointer;
+}
+
+.boton-verde{
+    background-color: #71B100;
+}
+
+.boton-amarillo{
+    background-color: #e08709;
+}
+
+.ver-todas{
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+/** NAVEGACION **/
+
+.navegacion a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.8rem;
+    margin-right: 2rem;
+    font-family: 'Cinzel', serif;
+}
+
+.navegacion a:hover {
+    color: #445c6d;
+}
+
+.navegacion a:last-of-type {
+    margin-right: 0;
+}
+
+/** CONTACTO HOME **/
+
+.contacto{
+    background-image: url(../img/encuentra.jpg);
+    background-position: center center;
+    background-size: cover;
+    height: 30rem;
+    display: flex;
+    align-items: center;
+
+}
+
+.contenedor-contacto{
+    flex: 1;
+    color: white;   
+}
+
+.contenedor-contacto p{
+    font-size: 1.8rem;
+}
+
+/** SECCION INFERIOR **/
+
+.seccion-inferior{
+    display: flex;
+    justify-content: space-between;
+}
+
+.seccion-inferior .blog{
+    flex-basis: 60%;
+}
+
+.seccion-inferior .opiniones{
+    flex-basis: calc(40% - 2rem);
+
+}
+
+.entrada-blog{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+}
+
+.entrada-blog:last-of-type{
+    margin-bottom: 0;
+}
+
+.entrada-blog .imagen{
+    flex-basis: 35%;
+}
+
+.entrada-blog .texto-entrada{
+    flex-basis: calc(65% - 3rem);
+}
+
+.texto-entrada a{
+    color: black;
+    text-decoration: none;
+}
+
+.texto-entrada h4{
+    margin: 0;
+    line-height: 1.2;
+}
+
+.texto-entrada h4::after{
+    content:'';
+    display:block;
+    width:15rem;
+    height:.5rem;
+    background-color: #71B100;
+    margin-top:1rem;
+}
+
+.texto-entrada span {
+    color: #e08709;
+}
+
+/** OPINIONES **/
+
+.opinion{
+    background-color: #71B100;
+    font-size: 2rem;
+    padding: 1rem;
+    color: white;
+    border-radius: 2rem;
+    margin-top: 4rem;
+}
+
+.opinion p{
+    text-align: right;
+    padding-right: 1rem;
+}
+
+.opinion blockquote::before{ /* pseudoelemento before para crear antes un objeto*/
+    content:'';
+    display: block;
+    width: 4rem;
+    height: 4rem;
+    background-image: url(../img/comilla.svg);
+    position: absolute; /* El hijo que quiero posicionar debe estar en absolute*/
+    left: -2rem; /*solo puedo acceder a esta propiedad una vez he establecido absolute */
+}
+
+.opinion blockquote {
+    padding-left: 2rem;
+    position: relative; /* El padre debe tener posicion relativa*/
+
+}
+
+/** FOOTER **/
+
+.site-footer{
+    background-color: #333333;
+    margin: 0;
+}
+
+.contenedor-footer {
+    padding: 3rem 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.copyright{
+    margin: 0;
+    color: white;
+}
+
+
+/** INTERNAS **/
+
+/* Nosotros */
+
+.contenido-nosotros{
+    display: grid;
+    grid-template-columns: 50% 50%; /* En funcion del numero de hijos que tengamos para disponer el número de columnas*/
+    grid-column-gap: 2rem;
+} /* Se puede poner como medida para las columnas 1fr 1fr 1fr, en ese caso repartiria 3 del mismo tamaño (una fraccion cada una)*/
+/* repeat(2, 100px) o repeat(2, 1fr)*/
+
+.texto-nosotros blockquote {
+    font-weight: 900;
+    font-size: 2rem;
+    margin: 0;
+    padding: 1rem 0 2rem;
+}
+
+/*Anuncio*/
+
+.resumen-propiedad{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Blog */
+
+.contenedor-entradas {
+    max-width: 70rem;
+    margin: auto;
+}
+
+
+/* Ayuda */
+
+.formulario-contacto p {
+    color: #4f4f4f;
+    margin: 2rem 0 .5rem 0;
+}
+
+label{
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+legend{
+    font-weight: 900;
+    font-size: 1.8rem;
+}
+
+fieldset{
+    margin-bottom: 1.5rem;
+}
+
+input:not([type="submit"]), textarea, select/*[type="text"], input[type="email"]*/ {
+    padding: .5rem;
+    display: block;
+    width: 100%;
+    margin-bottom: 2rem;
+    background-color: #e1e1e1;
+    border: none;
+    border-radius: 1rem;
+}
+
+select {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+textarea{
+    height: 20rem;
+}
+
+input[type="radio"]{
+    width: auto;
+    margin: auto;
+}
+
+.forma-contacto{
+    max-width: 25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+
+
+
+/* BUENAS PRACTICAS
+-A la hora de utilizar id y clases. Un mismo id está pensado para
+para ser utilizado una sola vez por página, en un solo elemento.
+Las clases si se pueden reutilizar. La misma clase se puede utilizar
+en varios elementos.
+-Casi mej9r utilizar clases que ids
+-Se pueden utilizar dos clases a la vez en un elemento, separados
+por un espacio. Pero no se pueden dos id.
+-Flexbox SOLO afecta al primer nivel de hijos IMPORTANTE
+-Usar rems formateados en vez de pixeles
+*/
